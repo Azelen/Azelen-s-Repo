@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ЕП "Комп'ютерна логіка"</title>
+    <meta charset="utf-8" />
+    <link type="text/css" href="Source/Site.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function justloaded() {
+            document.getElementById("MainContent").style.height = document.getElementById("BodyContent").clientHeight - 16 + "px";
+        }
+    </script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="justloaded()" onmousemove="justloaded()">
+    <form id="form1" runat="server">
+        <!-- Main Content -->
+        <div id="MainContent">
+            <!-- Head Content -->
+            <div id="HeadContent">
+                <span id="title">Комп'ютерна логіка</span>
+                <span id="Author">Автор: Пилипчук Андрій</span>
+            </div>
+            <hr />
+            <!-- Top Content -->
+            <div id="TopContent">
+                <table width="100%" border="0" style="padding-left: 20px; padding-right: 20px;">
+                    <tr>
+                        <td align="left"><asp:Label ID="Date" runat="server" Text=""></asp:Label></td>
+                        <td align="right">
+                             <asp:MultiView ID="LoginMultiview" runat="server" ActiveViewIndex="0">
+                                <asp:View ID="View1" runat="server">Привіт!
+                                    <a href="../Content/Login.aspx">Увійдіть</a> або 
+                                    <a href="../Content/Register.aspx">зареєструйтесь</a>!
+                                </asp:View>
+                                <asp:View ID="View2" runat="server">
+                                    <asp:Label ID="Loggedin_Username" runat="server" Text=""></asp:Label>
+                                    <asp:LinkButton ID="LogoutButton" runat="server" OnClick="LogoutButton_Click">Вийти</asp:LinkButton>
+                                    <a href="../Content/Users.aspx">Мій профіль</a>
+                                </asp:View>
+                            </asp:MultiView>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr />
+
+            <!-- Side Content -->
+            <div id="SideContent">
+                <div class="side_header">Меню</div>
+                <asp:Table ID="MenuTable" runat="server" Font-Size="15px" CellSpacing="6" CssClass="MenuTable">
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Home_menu_link" runat="server" Text="На головну" NavigateUrl="~/Content/Default.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Lessons_menu_link" runat="server" Text="Список лекцій" NavigateUrl="~/Content/Lessons.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Labs_menu_link" runat="server" Text="Лабораторні роботи" NavigateUrl="~/Content/Labs.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Practice_menu_link" runat="server" Text="Практичні роботи" NavigateUrl="~/Content/Practice.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Individual_menu_link" runat="server" Text="Індивідуальні завдання" NavigateUrl="~/Content/Individual.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Tests_menu_link" runat="server" Text="Тестування знань" NavigateUrl="~/Content/Tests.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Groups_menu_link" runat="server" Text="Список груп" NavigateUrl="~/Content/Groups.aspx"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                    <asp:TableRow>
+                        <asp:TableCell><asp:HyperLink ID="Administrating_menu_link" runat="server" Text="Адміністрування" NavigateUrl="~/Content/Administrating.aspx" Visible="false"></asp:HyperLink></asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+                <div class="side_header">Корисні посилання</div>
+                <asp:Table ID="Table1" runat="server" Font-Size="15px" CellSpacing="6" CssClass="MenuTable">
+                    <asp:TableRow>
+                        <asp:TableCell><a href="http://tntu.edu.ua" target="_blank">Тернопільський Національний Технічний Університет</a></asp:TableCell>
+                    </asp:TableRow>
+                </asp:Table>
+            </div>
+
+            <!-- Body Content -->
+            <div id="BodyContent">
+                <asp:ContentPlaceHolder id="body" runat="server"></asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

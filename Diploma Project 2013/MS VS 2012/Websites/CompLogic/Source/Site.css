@@ -1,0 +1,137 @@
+﻿/*Автор: Андрій Azelen Пилипчук КМ-603 ТК ТНТУ ім. Івана Пулюя. 2013 рік*/
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    background-image: url('old-paper-text.jpg');
+    line-height: 1.75em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #000099; /*update later*/
+    text-decoration: none;
+}
+
+    a:hover {
+    color: #0066FF;
+    text-shadow: green 0px 0px 2px;
+}
+
+/*Main Content width = 1024px = 100% = 18% (SideContent) + 1% (padding) * 2 (sides) + 78% (MainContent) + 1% (padding) * 2 (sides)*/
+#MainContent {
+    width: 1024px;
+    height: 100%;
+    margin: 0px auto 0 auto;
+    padding-top: 36px;
+    background-color: #202020;
+}
+
+#title {
+    left: 460px;
+    top: -16px;
+    position: relative;
+    color: #CCFFFF;
+    font-size: 56px;
+    font-family: 'Bookman Old Style';
+    text-shadow: black 2px 4px 10px;
+    font-variant: small-caps;
+}
+
+    #title:hover {
+        cursor: default;
+        text-shadow: black 8px 8px 10px;
+    }
+
+#Author {
+    float: right;
+    top: 80px;
+    right: 10px;
+    position: relative;
+    color: white;
+}
+
+    #Author:hover {
+        cursor: default;
+        color: red;
+    }
+
+#HeadContent {
+    width: 1024px;
+    height: 80px;
+    margin-bottom: 24px;
+    float: left;
+    background-image: url('paper-1.jpg');
+}
+
+#TopContent {
+    width: 1024px;
+    height: 28px;
+    background-color: #202020;
+    float: left;
+    position: relative;
+    color: lightgoldenrodyellow;
+}
+
+    #TopContent a {
+    color: #FFFF00;
+}
+
+#SideContent {
+    width: 202px;
+    height: 100%;
+    float: left;
+    position: relative;
+    padding: 8px;
+    background-image: url('paper-2.jpg');
+}
+
+#BodyContent {
+    width: 774px;
+    height: auto;
+    min-height: 600px;
+    float: left;
+    text-align: justify;
+    position: relative;
+    padding: 16px;
+    background-image: url('paper-2.jpg');
+}
+
+    #BodyContent p {
+        text-indent: 24px;
+    }
+
+    #BodyContent a {
+    color: #FF3300;
+}
+
+    #BodyContent a:hover {
+        color: darkorange;
+        text-shadow: silver 0px 0px 4px;
+    }
+
+.BodyTable {
+    margin: 0 auto 0 auto;
+    text-indent: 0px;
+}
+
+.MenuTable {
+    padding-left: 12px;
+}
+
+.MultilineTextBox {
+    resize: vertical;
+    max-height: 200px;
+}
+
+.side_header {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    font-family: 'Bookman Old Style';
+    background-image: url('btn3.png');
+    background-size: 100% 100%;
+}
